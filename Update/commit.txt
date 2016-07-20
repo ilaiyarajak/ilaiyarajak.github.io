@@ -1,0 +1,10 @@
+git add .
+git commit -m "From meetilaiya to ilaiyarajak"
+git remote add origin https://github.com/meetilaiya/meetilaiya.github.io.git
+git remote add origin https://github.com/ilaiyarajak/ilaiyarajak.github.io.git
+git push origin master
+
+git clone https://github.com/ilaiyarajak/ilaiyarajak.github.io.git
+git remote remove origin 
+git remote add origin ssh://git@github.com/ilaiyarajak/ilaiyarajak.github.io.git
+git remote set-url origin ssh://git@github.com/ilaiyarajak/ilaiyarajak.github.io.git
