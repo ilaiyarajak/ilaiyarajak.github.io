@@ -3,12 +3,12 @@ $(function(){
 	function getDisplayTimer(timeObj)
 	{
 		var dataToDisplay = timeObj.months ? timeObj.months+ "-Months " : "";
-		dataToDisplay += timeObj.days ? timeObj.days + "-Days " : "";
+		dataToDisplay += timeObj.days ? timeObj.days + "-Day(s) " : "";
 		dataToDisplay += timeObj.hours + ":" + timeObj.minutes + ":" + timeObj.seconds;
 		return dataToDisplay;
 	}
 	setInterval(function() {
-		var timespan = countdown_ilaiya(new Date("09/04/2016 09:00 AM"), new Date());
+		var timespan = countdown_ilaiya(new Date("09/04/2016 08:30 AM"), new Date());
 		var div = document.getElementById('idSpanTimer');
 		div.innerHTML =getDisplayTimer(timespan);
 	}, 1000);
@@ -31,11 +31,20 @@ function countdown_ilaiya(to){
 	var hrs = parseInt(mins/min_hr);
 	var days = parseInt(hrs/hr_day);
 	var months = parseInt(days/day_mnth);
+	if(from<to)
 	return {
 		seconds:getItInTwoDigits(secs-(mins*60)),
 		minutes:getItInTwoDigits(mins-(hrs*60)),
 		hours:getItInTwoDigits(hrs-(days*24)),
 		days:days-(months*30),
 		months:months
+	};
+	else
+	return {
+		seconds: " Life",
+		minutes:" Married ",
+		hours:"Happy ",
+		days:0,
+		months:0
 	};
 }
